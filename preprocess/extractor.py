@@ -31,9 +31,6 @@ class Extractor:
         dates = self._extract_dates(question)
 
         entities = self._dedup(role_entities + ner_entities)
-        if '(' in question:
-            print(question)
-            print(role_entities)
         return {"entities": entities, "dates": dates}
 
     def _extract_role_entities(self, text: str) -> Tuple[List[Dict], Set[str]]:
@@ -105,9 +102,3 @@ _extractor = Extractor()
 def load_json(path: str):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
-
-data = load_json("../official_QA_eval_set.json")
-# data = load_json("../mini_qa_devset.json")
-for ex in data:
-    q = ex["question_explicit"]
-    out = _extractor.extract(q)

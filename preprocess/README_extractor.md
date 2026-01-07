@@ -52,3 +52,23 @@ Step E — Deliver
  and validate improvements using a simple coverage script. Please run coverage on
   official_QA_eval_set.json before and after changes and write a short report: entity coverage, 
 role coverage, date coverage, plus top failure patterns with examples."""
+
+
+### reply from Yao
+
+baseline:
+
+```
+entity: 119/123 (96.7%)
+  role: 0/123 (0.0%)
+  date: 0/123 (0.0%)
+```
+
+
+after changing extractor.py
+
+```
+entity: 120/123 (97.6%)
+  role: 37/123 (30.1%)
+  date: 0/123 (0.0%)
+```
